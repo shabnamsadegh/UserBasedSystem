@@ -66,6 +66,10 @@ cursor: default;
 margin: 10px 10px;
 vertical-align: top;
 }
+.tab2 img {
+margin: 0 3px;
+float: right;
+}
 .mianholder {
     
 }
