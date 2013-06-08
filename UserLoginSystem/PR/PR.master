@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PR.master.cs" Inherits="UserLoginSystem.PR.PR" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="TabLevel1PlaceHolder" runat="server">
+    <div class="tab1 selected" tabindex="1">اخبار</div>
+    <div class="tab1" tabindex="2">گالری</div>
+    <div class="tab1"tabindex="3">اطلاعات ناشران</div>
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="TabLevel2PlaceHolder" runat="server">
+    <div class="tab2" tabindex="1"><a href="#"><img width="24px" height="24px" src="../Images/news-icon.png"/>همه اخبار</a></div>
+    <div class="tab2" tabindex="1"><img width="24px" height="24px" src="../Images/news-add.png"/>خبر جدید</div>
+   
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="MainPlaceHolder" runat="server">
+    <asp:ContentPlaceHolder ID="MainPlaceHolder" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

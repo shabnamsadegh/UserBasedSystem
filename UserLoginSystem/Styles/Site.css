@@ -1,0 +1,135 @@
+﻿@font-face {font-family: 'BMitra';font-weight:normal;src: url('../fonts/BMitra.eot?#') format('eot'),url('../fonts/BMitra.woff') format('woff'),url('../fonts/BMitra.ttf') format('truetype'); unicode-range: U+0600-06FF,U+0020-003A;}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+html{ height: 100%;}
+form{ height: 100%;}
+body {
+    direction: rtl;
+    font-family:BMitra,Serif;
+    font-size:16px;
+    height: 100%;
+    background-color: rgb(250,250,250);
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    color: lightskyblue;
+}
+.headerpanel 
+{
+    padding: 10px;
+    color: #fff;
+    background-color: #270508;
+    height: 80px;
+}
+.tabPanel {
+    background-color: #581014;
+    height: 58px;
+}
+.tabLevel2 {
+    height: 50px;
+    border: 1px solid white;
+    background-color: rgb(234,234,234)
+}
+.tab1 {
+    background-color: white;
+float: right;
+width: 90px;
+margin-top: 20px;
+margin-right: 10px;
+height: 25px;
+text-align: center;
+font-weight: bold;
+padding: 5px 0px;
+-moz-border-radius-topleft: 5px;
+-webkit-border-top-left-radius: 5px;
+ border-top-left-radius: 5px;
+-moz-border-radius-topright: 5px;
+-webkit-border-top-right-radius: 5px;
+border-top-right-radius: 5px;
+cursor: default;
+}
+.tab1:hover
+{
+    background-color: rgb(234,234,234);
+    
+}
+.selected {
+    margin-top: 24px;
+}
+.tab2 {
+    float: right;
+margin: 10px 10px;
+vertical-align: top;
+}
+.mianholder {
+    
+}
+#login {
+    float: left;
+    text-align: center;
+}
+#titletext {
+    font-size: 36px;
+}
+.borderedcontent {
+    width: initial;
+    border: 2px solid
+    
+}
+/* LoginPage
+--------------------------------------------------------*/
+.CenterContent {
+    width: 25%;
+    margin: 10px auto ;
+}
+.failureNotification
+{
+    color: Red;
+}
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 18px;
+    padding: 2px 4px 8px 4px;
+}
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
