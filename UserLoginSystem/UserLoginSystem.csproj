@@ -54,6 +54,10 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="App_Data\FaraBourseLoginDb.mdf" />
+    <Content Include="App_Data\FaraBourseLoginDb_log.ldf">
+      <DependentUpon>FaraBourseLoginDb.mdf</DependentUpon>
+    </Content>
     <Content Include="Images\news-add.png" />
     <Content Include="Images\news-icon.png" />
     <Content Include="PR\NewsPanel.aspx" />
@@ -126,9 +130,7 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Account\Web.config" />
     <Content Include="Site.Master" />
