@@ -1,0 +1,48 @@
+﻿@font-face {font-family: 'BMitra';font-weight:normal;src: url('../fonts/BMitra.eot?#') format('eot'),url('../fonts/BMitra.woff') format('woff'),url('../fonts/BMitra.ttf') format('truetype'); unicode-range: U+0600-06FF,U+0020-003A;}
+* {
+    margin: 0px;
+    padding: 0px;
+}
+html{ height: 100%;}
+form{ height: 100%;}
+body {
+    direction: rtl;
+    font-family:BMitra,Serif;
+    font-size:16px;
+    height: 100%;
+    background-color: #fef0f0;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    color: lightskyblue;
+}
+.headerpanel 
+{
+    padding: 10px;
+    color: #fff;
+    background-color: #270508;
+    height: 80px;
+}
+.tabPanel {
+    background-color: #581014;
+    height: 58px;
+}
+.mianholder {
+    background-color: #fef0f0;
+    /*height: 80%;/*78.93%;*/
+}
+#login {
+    float: left;
+    text-align: center;
+}
+#titletext {
+    font-size: 36px;
+}
+.borderedcontent {
+    width: initial;
+    border: 2px solid
+    
+}

@@ -4,7 +4,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head runat="server">
     <title></title>
-    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/main.css" rel="stylesheet" type="text/css" />
+  
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -52,7 +54,14 @@
     </div>
 
     </form>
+
     <script src="../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            runWhenDocIsReady();
+        });
+    </script>
     <script type="text/javascript">
         $(function ()
         {
@@ -64,9 +73,7 @@
                 $(".tab2[tabindex="+$(this).attr("tabindex")+"]").show(0);
 
             });
-
         });
-        
     </script>
     <asp:ContentPlaceHolder ID="ScriptPlaceHolder" runat="server">
     </asp:ContentPlaceHolder>
