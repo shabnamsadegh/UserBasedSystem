@@ -44,7 +44,7 @@ namespace CustomWebControlUI
             SqlDataReader dr = cmd.ExecuteReader();
             return dr;
         }
-        public static void InsertNews(News nw, string symbols)
+        public static void InsertNews(News nw, string symbols,string mode,int news_id)
         {
             SqlConnection cnn = new SqlConnection(connection_string);
             SqlCommand cmd = new SqlCommand();
@@ -61,7 +61,10 @@ namespace CustomWebControlUI
             cmd.Parameters.AddWithValue("@tmpImageUrl", nw.getImageFileName());
             cmd.Parameters.AddWithValue("@tmpPublication",nw.getPublication());
             cmd.Parameters.AddWithValue("@tmpIdEdited", false);
-            cmd.Parameters.AddWithValue("tmpSymbolString", symbols);
+            cmd.Parameters.AddWithValue("@tmpSymbolString", symbols);
+            cmd.Parameters.AddWithValue("@time", nw.getTime());
+            cmd.Parameters.AddWithValue("@mode", mode);
+            cmd.Parameters.AddWithValue("@news_id",news_id);
             cmd.Connection = cnn;
             cnn.Open();
             cmd.ExecuteNonQuery();
@@ -82,7 +85,13 @@ namespace CustomWebControlUI
 
         }
 
-     
+        public static News LoadNewsForEdit(int news_id) 
+        {
+            News nw;
+            DataTable dt = LoadNews(news_id);
+            nw = new News(dt.Rows[0]["time"].ToString(), (DateTime)dt.Rows[0]["datetime"], dt.Rows[0]["TitleDesc"].ToString(), dt.Rows[0]["Titl1"].ToString(), dt.Rows[0]["Title2"].ToString(), dt.Rows[0]["Summery"].ToString(), dt.Rows[0]["Body"].ToString(), dt.Rows[0]["ImageUrl"].ToString(), dt.Rows[0]["Link"].ToString(), (bool)dt.Rows[0]["Publication"],dt.Rows[0]["symbols"].ToString());
+            return nw;
+        }
         public static DataTable loadSymbols()
         {
             DataTable myDataTable = new DataTable();
@@ -97,6 +106,16 @@ namespace CustomWebControlUI
             adapter.Fill(myDataTable);
             return myDataTable;
         }
-
+        public static void DeleteNews(int news_id)
+        {
+            SqlConnection cnn = new SqlConnection(connection_string);
+            SqlCommand cmd = new SqlCommand();
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "DeleteNewsSite";
+            cmd.Connection = cnn;
+            cmd.Parameters.AddWithValue("@news_id", news_id);
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+        }
     }
 }

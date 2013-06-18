@@ -9,6 +9,7 @@ namespace CustomWebControlUI
     public class News
     {
         private DateTime publish_datetime;
+        private string time;
         private string desc_title;// رو تیتر
         private string title1;
         private string title2;
@@ -17,20 +18,26 @@ namespace CustomWebControlUI
         private string image_file_name;
         private const string image_destination_url = "";
         private string News_resource;
+        private string symbol_string;
         private bool publication;
 
         public DateTime getPublishDatetime() { return this.publish_datetime; }
+        public string getTime() { return this.time; }
         public string getDescTitle() { return this.desc_title; }
         public string getTitle1() { return this.title1; }
         public string getTitle2() { return this.title2; }
         public string getNewsSummery() { return this.News_summery; }
         public string getNewsBody() { return this.News_body; }
         public string getImageFileName() { return this.image_file_name; }
+        public string getSymbolString() { return this.symbol_string; }
         public string getNewsResource() { return this.News_resource; }
+        
         public bool getPublication() { return this.publication; }
-        public News(string News_time, DateTime News_date, string desc_title, string title1, string title2, string News_summery, string News_body, string image_file_name, string News_resource, bool publication)
+
+        public News(string time,DateTime News_date, string desc_title, string title1, string title2, string News_summery, string News_body, string image_file_name, string News_resource, bool publication,string symbol_string)
         {
-            this.publish_datetime = makeTime(News_date, News_time);
+            this.publish_datetime = News_date.Date;
+            this.time = time;
             this.desc_title = desc_title;
             this.title1 = title1;
             this.title2 = title2;
@@ -39,9 +46,10 @@ namespace CustomWebControlUI
             this.image_file_name = image_destination_url + image_file_name;
             this.News_resource = News_resource;
             this.publication = publication;
+            this.symbol_string = symbol_string;
         }
 
-        private DateTime makeTime(DateTime date, string time)
+        public static DateTime makeTime(DateTime date, string time)
         {
             DateTime dt;
             int hour;

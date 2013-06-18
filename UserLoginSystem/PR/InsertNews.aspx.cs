@@ -11,31 +11,45 @@ namespace CustomWebControlUI
 {
     public partial class Default : System.Web.UI.Page
     {
-
+        bool edit_mode = false;
+        int news_id = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
-             System.Data.DataTable dt;
+
+            if (Request.QueryString.Count > 0)
+            {
+                edit_mode = true;
+                news_id = Int32.Parse(Request.QueryString[0]);
+                LoadNewsForEdit(news_id);
+                 
+            }
+
+            System.Data.DataTable dt;
             if (!IsPostBack)
             {
-               dt = new System.Data.DataTable();
+                dt = new System.Data.DataTable();
                 dt = database.loadSymbols();
                 RadComboBox1.DataSource = dt;//QuoteData.Instance.Stocks.Select(x => x.Value).OrderBy(x => x.SymbolName);
                 RadComboBox1.DataBind();
 
-                DatePicker1.Date = DateTime.Now;
-                fill_time_field_by_now();
-                // txtNewsBody.Text = "<p style='background-color:green;'>Salam</p>";
+                if (!edit_mode)
+                {
+                    DatePicker1.Date = DateTime.Now;
+                    fill_time_field_by_now();
+                }
             }
             else
             {
-
-
                 dt = new System.Data.DataTable();
                 dt = database.loadSymbols();
-               symbolNames.Value = LoadSelectedSymbols(symbols.Value, dt);
+                symbolNames.Value = LoadSelectedSymbols(symbols.Value, dt);
             }
         }
-
+        private void LoadNewsForEdit(int news_id)
+        {
+            News nw = database.LoadNewsForEdit(news_id);
+            loadNews(nw);
+        }
         private string LoadSelectedSymbols(string concatenated_symbols, DataTable dt)
         {
 
@@ -83,15 +97,34 @@ namespace CustomWebControlUI
             sb.Replace("&lt;/b&gt;", "</b>");
             sb.Replace("&lt;i&gt;", "<i>");
             sb.Replace("&lt;/i&gt;", "</i>");
-            // lblTest.Text = sb.ToString();
 
-            News nw = new News(txtTime.Text, dt, txtDescTitle.Text, txtTitle1.Text, txtTitle2.Text, txtNewsSummery.Text, sb.ToString(), ImageUploader.FileName, txtNewsResource.Text, true);
+
+            News nw = new News(txtTime.Text, dt, txtDescTitle.Text, txtTitle1.Text, txtTitle2.Text, txtNewsSummery.Text,
+                        sb.ToString(), ImageUploader.FileName, txtNewsResource.Text, true, symbols.Value);
             // lblTest.Text = nw.news_body;
-            // database.InsertNews(nw,symbols.Value.ToString());
-
-
+            if(edit_mode == false)
+                database.InsertNews(nw, symbols.Value.ToString(),"i",news_id);
+            else
+                database.InsertNews(nw, symbols.Value.ToString(), "e",news_id);
 
         }
+        private void loadNews(News nw)
+        {
+            txtTime.Text = nw.getTime();
+            DatePicker1.Date = nw.getPublishDatetime();
+            txtTitle1.Text = nw.getTitle1();
+            txtTitle2.Text = nw.getTitle2();
+            txtDescTitle.Text = nw.getDescTitle();
+            txtNewsBody.Text = nw.getNewsBody();
+            txtNewsResource.Text = nw.getNewsResource();
+            txtNewsSummery.Text = nw.getNewsSummery();
+            chkPublish.Checked = nw.getPublication();
+            symbols.Value = nw.getSymbolString();
+            ParseSymbolString(nw.getSymbolString());
+            //symbolNames.Value = 
+
+        }
+
         private void fill_time_field_by_now()
         {
             string h = DateTime.Now.Hour.ToString();
@@ -114,6 +147,23 @@ namespace CustomWebControlUI
             }
             txtTime.Text = h + ":" + m;
 
+        }
+        public void ParseSymbolString(string SymbolString)
+        {
+            string[] symbolString = SymbolString.Split(',');
+            string symbol_id = "";
+            string symbol_name = "";
+            for (int i = 0; i < symbolString.Length; i++)
+            {
+                if (i % 2 == 1)
+                    symbol_name = symbol_name + symbolString[i] + ".";
+                else
+                    symbol_id = symbol_id + symbolString[i] + ".";
+            }
+
+           // symbolNames.Value = symbol_name.Remove(symbol_name.Length - 1);
+            symbolNames.Value = symbol_name;
+            symbols.Value = symbol_id.Remove(symbol_id.Length - 1);
         }
 
     }

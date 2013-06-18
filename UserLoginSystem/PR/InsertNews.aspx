@@ -33,7 +33,7 @@
                              <asp:TextBox ID="txtTime" name="txtTime" class="clsTime" runat="server" onchange="javascript:change_warning_status('time');" >
                              </asp:TextBox>
                             </td>
-            <td><asp:Label ID="Label1" runat="server" Text="انتشار"></asp:Label></td><td><asp:CheckBox ID="CheckBox1" runat="server" /></td>
+            <td><asp:Label ID="Label1" runat="server" Text="انتشار"></asp:Label></td><td><asp:CheckBox ID="chkPublish" runat="server" /></td>
             </tr>
            <tr><td colspan="6"></td></tr>
             <tr>
@@ -294,6 +294,7 @@
                 symbol_str = symbol_str + "." + symbols1[i];
             });
             $("#<%= symbols.ClientID %>").attr("value", symbol_str);
+            alert("salam");
 
         }
         function loadSymbols() {
@@ -314,13 +315,17 @@
             var selectedSymbolName;
             //var size = symbolNames.length;
             var index = symbolNames.indexOf("");
-            symbolNames.splice(index, 1);
+            console.log("a: " + symbolName);
 
+            symbolNames.splice(index, 1);
+            console.log("b: " + symbolName);
+            
             var index = symbols1.indexOf("");
             symbols1.splice(index, 1);
-
+            
+            console.log("%o",symbolNames);
             $.each(symbols1, function (i) {
-              
+             
                    console.log("i:" + i );
                    console.log("symbols: ");
                    console.log(symbols1[i]);
