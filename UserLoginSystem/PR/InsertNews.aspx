@@ -85,6 +85,7 @@ padding:12px;
    #btndel
    {
     cursor:pointer !important;
+    margin:6px;
    }
       area
       {
@@ -102,6 +103,7 @@ padding:12px;
     {
     direction:ltr;
     overflow:scroll;
+    padding: 4px;
     }
    .imageBorder {
     border-style: double;
@@ -179,9 +181,10 @@ padding:12px;
                 <td><asp:Label ID="lblNewsImage" runat="server" Text="تصویر"></asp:Label></td>
                 <td colspan="4">
                  <ul id="iconImg" class="ui-widget ui-helper-clearfix" style="display:inline-block">
-                            	<li class="ui-state-default ui-corner-all" title="حذف تصویر"><span class="ui-icon ui-icon-close"  onclick="DeleteImage();" ></span></li>
-                               
+                            	<li class="ui-state-default ui-corner-all" title="رفتن به گالری"><span class="ui-icon ui-icon-image"  onclick="OpenGallery();" ></span></li>
+                                <li class="ui-state-default ui-corner-all" title="حذف تصویر"><span class="ui-icon ui-icon-close"  onclick="DeleteImage();" ></span></li>
                                 <li class="ui-state-default ui-corner-all" title="اضافه کردن تصویر"><span class="ui-icon ui-icon-plus"  onclick="OpenImageChooser();" ></span></li>
+                              
                                 
                             </ul>
                                        <%-- <asp:Button class="im" ID="btnGoToGallery" runat="server" type="submit" OnClick="btnGoToGallery_Click"/>--%>
@@ -247,7 +250,7 @@ padding:12px;
     
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
-<script type="text/javascript">
+    <script type="text/javascript">
 
     function onSelect(calendar, date) {
         // Beware that this function is called even if the end-user only
@@ -327,7 +330,7 @@ padding:12px;
 </script>
     <script type="text/javascript">
         function runWhenDocIsReady() {
-            $("#__VIEWSTATE").remove();
+           // $("#__VIEWSTATE").remove();
             var url_for_load_image = $("#<%= image_src.ClientID %>").val();
             $("#newsImage").attr("src", url_for_load_image);
              $("head").append("<link>");
@@ -380,7 +383,7 @@ padding:12px;
                  $("#galleryForm").fadeIn("slow");
              }
              function OpenGallery() {
-     
+                 $("<div>در حال حاضر این قسمت آماده نمی باشد</div>").dialog({modal:true});
     
              }
              function DeleteImage() {

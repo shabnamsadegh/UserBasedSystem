@@ -2,7 +2,16 @@
     CodeBehind="Login.aspx.cs" Inherits="UserLoginSystem.Account.Login" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
-   
+   <style>
+   body
+   {background:#c5dde7;
+
+       }
+       .CenterContent , .mianholder
+       {
+           background:#c5dde7;
+           }
+   </style>
 </asp:Content>
 <asp:Content ID="MainContent" runat="server" ContentPlaceHolderID="MainPlaceHolder">
     <div class="CenterContent">
@@ -16,7 +25,9 @@
                 <div class="accountInfo">
                     <fieldset class="login">
                         <legend>اطلاعات کاربری</legend>
+                        <div id="accountInfoInner">
                         <p>
+                        
                             <asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName">نام کاربری:</asp:Label>
                             <asp:TextBox ID="UserName" runat="server" CssClass="textEntry"></asp:TextBox>
                             <asp:RequiredFieldValidator ID="UserNameRequired" runat="server" ControlToValidate="UserName"
@@ -30,9 +41,10 @@
                                 CssClass="failureNotification" ErrorMessage="رمز عبور خود را وارد نمایید." ToolTip="رمز عبور خود را وارد نمایید."
                                 ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
                         </p>
+                        <div>
                     </fieldset>
                     <p class="submitButton">
-                        <asp:Button ID="LoginButton" runat="server" CommandName="Login" Text="Log In" ValidationGroup="LoginUserValidationGroup" />
+                        <asp:Button ID="LoginButton" runat="server" class="ui-button ui-widget ui-state-default ui-corner-all ui-state-hover" CommandName="Login" Text="ورود" ValidationGroup="LoginUserValidationGroup" />
                     </p>
                 </div>
             </LayoutTemplate>

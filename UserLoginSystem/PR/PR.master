@@ -62,7 +62,7 @@
 //        $(this).blur();
 //    });
     $("#tab_news").click(function () {
-        window.location = "ViewNews.aspx?tab1=tab_news&tab2=allNews";
+        window.location = "InsertNews.aspx?tab1=tab_news&tab2=newNews";
     });
     $("#allNews").click(function () {
         window.location = "ViewNews.aspx?tab1=tab_news&tab2=allNews";

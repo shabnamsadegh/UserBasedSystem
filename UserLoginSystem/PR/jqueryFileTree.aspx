@@ -39,7 +39,7 @@
         string strRelativePath = Uri.UnescapeDataString(relativePath.ToString());
         strRelativePath = strRelativePath.Replace('/', System.IO.Path.DirectorySeparatorChar);
       */
-        Response.Write("\t<li class=\"file ext_" + ext + "\"><img class='thumbnail' src='" + dir + fi.Name + "'/><a  href=\"#\" rel=\"" + dir + fi.Name + "\">" + fi.Name + "</a></li>\n");		
+        Response.Write("\t<li class=\"file ext_" + ext + "\"><a  href=\"#\" rel=\"" + dir + fi.Name + "\"><img class='thumbnail' src='" + dir + fi.Name + "'/>" + fi.Name + "</a></li>\n");		
 	}
 	Response.Write("</ul>");
  %>

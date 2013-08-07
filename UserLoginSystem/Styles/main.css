@@ -238,3 +238,56 @@ border-top:2px solid #c8f9fc;
   {
       cursor:pointer !important;
       }
+   
+      .login
+      {
+          border: 3px solid #0B5A7D;
+          margin-bottom: 10px;
+          color: White;
+          }
+      .accountInfo
+      {
+         width: 600px;
+         min-height:150px;
+         margin-right: 35%; 
+        
+   border-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+     border-top-left-radius: 5px;
+    -moz-border-radius-topright: 70px;
+    -webkit-border-top-right-radius: 70px;
+    border-top-right-radius: 70px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomleft: 80px;
+    -webkit-border-bottom-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    background: #2191c0 url(/Images/ui-bg_gloss-wave_75_2191c0_500x100.png) repeat-x;
+  -webkit-box-shadow: 0px 0px 30px rgba(83, 225, 75, 0.32);
+    -moz-box-shadow:    0px 0px 30px rgba(83, 225, 75, 0.32);
+    box-shadow:         0px 0px 30px rgba(83, 225, 75, 0.32);
+    border-left: 1px solid #10cfff ;
+    border-right: 1px solid #10cfff ;
+    padding: 25px;    
+    margin-top: 30px;
+    text-align:center;
+          }
+    #accountInfoInner
+    {
+       
+        width: 230px;
+        margin-right: 32%;
+        }
+        
+ #accountInfoInner label
+  {
+    float:right;
+    display:inline-block;
+   }
+#accountInfoInner input
+  {
+    float:left;
+  }
+                  
