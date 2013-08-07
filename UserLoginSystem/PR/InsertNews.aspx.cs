@@ -15,40 +15,34 @@ namespace CustomWebControlUI
         int news_id = -1;
         protected void Page_Load(object sender, EventArgs e)
         {
+           // Page.Form.Action = "Photo Category.aspx?tab1=tab_gallery&tab2=photoCategory";
 
             if (Request.QueryString.Count > 0)
             {
-                edit_mode = true;
-                news_id = Int32.Parse(Request.QueryString[0]);
-                LoadNewsForEdit(news_id);
-                 
+                Int32.TryParse(Request.QueryString["id"], out news_id);
+                //todo check if news_id is not valid
+
+                if (Request.QueryString.Count == 3)
+                    edit_mode = true;
+
             }
 
-            System.Data.DataTable dt;
             if (!IsPostBack)
             {
-                dt = new System.Data.DataTable();
-                dt = database.loadSymbols();
-                RadComboBox1.DataSource = dt;//QuoteData.Instance.Stocks.Select(x => x.Value).OrderBy(x => x.SymbolName);
+                RadComboBox1.DataSource = database.loadSymbols();
                 RadComboBox1.DataBind();
 
                 if (!edit_mode)
                 {
                     DatePicker1.Date = DateTime.Now;
-                    fill_time_field_by_now();
+                    txtTime.Text = DateTime.Now.ToString("hh:mm");
+                }
+                else
+                {
+                    loadNews(database.LoadNewsForEdit(news_id));
                 }
             }
-            else
-            {
-                dt = new System.Data.DataTable();
-                dt = database.loadSymbols();
-                symbolNames.Value = LoadSelectedSymbols(symbols.Value, dt);
-            }
-        }
-        private void LoadNewsForEdit(int news_id)
-        {
-            News nw = database.LoadNewsForEdit(news_id);
-            loadNews(nw);
+
         }
         private string LoadSelectedSymbols(string concatenated_symbols, DataTable dt)
         {
@@ -58,7 +52,7 @@ namespace CustomWebControlUI
             int j = 0;
             while (j < dt.Rows.Count)
             {
-                for (int i = 1; i < symbols.Length; i++)
+                for (int i = 0; i < symbols.Length; i++)
                 {
                     if (symbols[i] == dt.Rows[j][0].ToString())
                     {
@@ -70,13 +64,46 @@ namespace CustomWebControlUI
 
             return tmp;
         }
-        protected void btnSubmit1_Click(object sender, EventArgs e)
-        {
 
-            //StringBuilder st = new StringBuilder();
+        private void loadNews(News nw)
+        {
+            txtTime.Text = nw.getTime();
+            DatePicker1.Date = nw.getPublishDatetime();
+            txtTitle1.Text = nw.getTitle1();
+            txtTitle2.Text = nw.getTitle2();
+            txtDescTitle.Text = nw.getDescTitle();
+            txtNewsBody.Text = nw.getNewsBody();
+            txtNewsResource.Text = nw.getNewsResource();
+            txtNewsSummery.Text = nw.getNewsSummery();
+            chkPublish.Checked = nw.getPublication();
+            image_src.Value = nw.getImageFileName();
+            // symbols.Value = nw.getSymbolString();
+            ParseSymbolString(nw.getSymbolString());
+            //symbolNames.Value = 
+
         }
 
-        protected void btnSubmit1_Click1(object sender, ImageClickEventArgs e)
+
+        public void ParseSymbolString(string SymbolString)
+        {
+            string[] symbolString = SymbolString.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
+            string symbol_id = "";
+            string symbol_name = "";
+            for (int i = 0; i < symbolString.Length; i++)
+            {
+                if (i % 2 == 1)
+                    symbol_name = symbol_name + symbolString[i] + ".";
+                else
+                    symbol_id = symbol_id + symbolString[i] + ".";
+            }
+            if (symbolString.Length > 0)
+            {
+                symbolNames.Value = symbol_name.Remove(symbol_name.Length - 1);
+                symbols.Value = symbol_id.Remove(symbol_id.Length - 1);
+            }
+        }
+
+        protected void btnSubmit_Click(object sender, EventArgs e)
         {
             // lblTest.Text = ImageUploader.FileName;
             DateTime dt;
@@ -90,81 +117,31 @@ namespace CustomWebControlUI
             }
             if (txtTime.Text == "")
             {
-                fill_time_field_by_now();
+                txtTime.Text = DateTime.Now.ToString("hh:mm");
             }
-            StringBuilder sb = new StringBuilder(HttpUtility.HtmlEncode(txtNewsBody.Text));
-            sb.Replace("&lt;b&gt;", "<b>");
-            sb.Replace("&lt;/b&gt;", "</b>");
-            sb.Replace("&lt;i&gt;", "<i>");
-            sb.Replace("&lt;/i&gt;", "</i>");
+            //StringBuilder sb = new StringBuilder(HttpUtility.HtmlEncode(txtNewsBody.Text));
+            //sb.Replace("&lt;b&gt;", "<b>");
+            //sb.Replace("&lt;/b&gt;", "</b>");
+            //sb.Replace("&lt;i&gt;", "<i>");
+            //sb.Replace("&lt;/i&gt;", "</i>");
 
 
             News nw = new News(txtTime.Text, dt, txtDescTitle.Text, txtTitle1.Text, txtTitle2.Text, txtNewsSummery.Text,
-                        sb.ToString(), ImageUploader.FileName, txtNewsResource.Text, true, symbols.Value);
+                        txtNewsBody.Text, image_src.Value, txtNewsResource.Text, true, symbols.Value);
             // lblTest.Text = nw.news_body;
-            if(edit_mode == false)
-                database.InsertNews(nw, symbols.Value.ToString(),"i",news_id);
+            if (edit_mode == false)
+                database.InsertNews(nw, symbols.Value.ToString(), "i", news_id);
             else
-                database.InsertNews(nw, symbols.Value.ToString(), "e",news_id);
-
-        }
-        private void loadNews(News nw)
-        {
-            txtTime.Text = nw.getTime();
-            DatePicker1.Date = nw.getPublishDatetime();
-            txtTitle1.Text = nw.getTitle1();
-            txtTitle2.Text = nw.getTitle2();
-            txtDescTitle.Text = nw.getDescTitle();
-            txtNewsBody.Text = nw.getNewsBody();
-            txtNewsResource.Text = nw.getNewsResource();
-            txtNewsSummery.Text = nw.getNewsSummery();
-            chkPublish.Checked = nw.getPublication();
-            symbols.Value = nw.getSymbolString();
-            ParseSymbolString(nw.getSymbolString());
-            //symbolNames.Value = 
-
+                database.InsertNews(nw, symbols.Value.ToString(), "e", news_id);
         }
 
-        private void fill_time_field_by_now()
-        {
-            string h = DateTime.Now.Hour.ToString();
-            string m = DateTime.Now.Minute.ToString();
-            if (h.Length == 1)
-            {
-                h = "0" + h;
-            }
-            else if (h.Length == 0)
-            {
-                h = "00";
-            }
-            if (m.Length == 1)
-            {
-                m = "0" + m;
-            }
-            else if (m.Length == 0)
-            {
-                m = "00";
-            }
-            txtTime.Text = h + ":" + m;
+        //protected void btnGoToGallery_Click(object sender, EventArgs e)
+        //{
 
-        }
-        public void ParseSymbolString(string SymbolString)
-        {
-            string[] symbolString = SymbolString.Split(',');
-            string symbol_id = "";
-            string symbol_name = "";
-            for (int i = 0; i < symbolString.Length; i++)
-            {
-                if (i % 2 == 1)
-                    symbol_name = symbol_name + symbolString[i] + ".";
-                else
-                    symbol_id = symbol_id + symbolString[i] + ".";
-            }
 
-           // symbolNames.Value = symbol_name.Remove(symbol_name.Length - 1);
-            symbolNames.Value = symbol_name;
-            symbols.Value = symbol_id.Remove(symbol_id.Length - 1);
-        }
-
+         
+        //}
+        //Response.Redirect("Photo Category.aspx?tab1=tab_gallery&tab2=photoCategory");
     }
+
 }

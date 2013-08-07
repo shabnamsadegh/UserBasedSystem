@@ -67,7 +67,10 @@
     <Content Include="App_Data\FaraBourseLoginDb_log.ldf">
       <DependentUpon>FaraBourseLoginDb.mdf</DependentUpon>
     </Content>
+    <Content Include="Images\Actions-insert-image-icon.png" />
     <Content Include="Images\Add.png" />
+    <Content Include="Images\animated-overlay.gif" />
+    <Content Include="Images\category-icon.png" />
     <Content Include="Images\Date Picker\active-bg.gif" />
     <Content Include="Images\Date Picker\dark-bg.gif" />
     <Content Include="Images\Date Picker\hover-bg.gif" />
@@ -78,48 +81,141 @@
     <Content Include="Images\Date Picker\title-bg.gif" />
     <Content Include="Images\Date Picker\today-bg.gif" />
     <Content Include="Images\Del.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\directory.png" />
+    <Content Include="Images\edit.png" />
     <Content Include="Images\error.png" />
+    <Content Include="Images\folder_open.png" />
     <Content Include="Images\icon_clock_orange.png" />
+    <Content Include="Images\Images-icon.png" />
+    <Content Include="Images\logo.PNG" />
     <Content Include="Images\news-add.png" />
     <Content Include="Images\news-icon.png" />
+    <Content Include="Images\no-image.jpg" />
+    <Content Include="Images\picture.png" />
+    <Content Include="Images\pictures-icon.png" />
     <Content Include="Images\PIN.jpg" />
     <Content Include="Images\pin.png" />
     <Content Include="Images\send.png" />
+    <Content Include="Images\spinner.gif" />
+    <Content Include="Images\ui-bg_flat_55_999999_40x100.png" />
+    <Content Include="Images\ui-bg_flat_75_aaaaaa_40x100.png" />
+    <Content Include="Images\ui-bg_glass_45_0078ae_1x400.png" />
+    <Content Include="Images\ui-bg_glass_55_f8da4e_1x400.png" />
+    <Content Include="Images\ui-bg_glass_75_79c9ec_1x400.png" />
+    <Content Include="Images\ui-bg_gloss-wave_45_e14f1c_500x100.png" />
+    <Content Include="Images\ui-bg_gloss-wave_50_6eac2c_500x100.png" />
+    <Content Include="Images\ui-bg_gloss-wave_75_2191c0_500x100.png" />
+    <Content Include="Images\ui-bg_inset-hard_100_fcfdfd_1x100.png" />
+    <Content Include="Images\ui-icons_0078ae_256x240.png" />
+    <Content Include="Images\ui-icons_056b93_256x240.png" />
+    <Content Include="Images\ui-icons_d8e7f3_256x240.png" />
+    <Content Include="Images\ui-icons_e0fdff_256x240.png" />
+    <Content Include="Images\ui-icons_f5e175_256x240.png" />
+    <Content Include="Images\ui-icons_f7a50d_256x240.png" />
+    <Content Include="Images\ui-icons_fcd113_256x240.png" />
+    <Content Include="PR\FileManager\css\cmenu-gloss-cyan-menu-item-hover.gif" />
+    <Content Include="PR\FileManager\css\cmenu-gloss-menu-item-hover.gif" />
+    <Content Include="PR\FileManager\css\cmenu-gloss-semitransparent-menu-item-hover.png" />
+    <Content Include="PR\FileManager\css\cmenu-human-menu-item-hover.gif" />
+    <Content Include="PR\FileManager\css\cmenu-osx-menu-item-hover.gif" />
+    <Content Include="PR\FileManager\css\cmenu-vista-bg.gif" />
+    <Content Include="PR\FileManager\css\cmenu-vista-menu-item-hover.gif" />
+    <Content Include="PR\FileManager\css\cmenu-xp-bg.gif" />
+    <Content Include="PR\FileManager\css\jquery.contextmenu.css" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="PR\FileManager\css\ui-lightness\jquery-ui-1.8.4.custom.css" />
+    <Content Include="PR\FileManager\Default.aspx" />
+    <Content Include="PR\files\admin sena.png" />
+    <Content Include="PR\FileManager\Funcations.aspx" />
+    <Content Include="PR\FileManager\icons\21-0.gif" />
+    <Content Include="PR\FileManager\icons\CCopy.png" />
+    <Content Include="PR\FileManager\icons\CDelete.png" />
+    <Content Include="PR\FileManager\icons\ceditcut.png" />
+    <Content Include="PR\FileManager\icons\cfolderpng.png" />
+    <Content Include="PR\FileManager\icons\Copy-32.png" />
+    <Content Include="PR\FileManager\icons\cPaste.png" />
+    <Content Include="PR\FileManager\icons\Cut-32.png" />
+    <Content Include="PR\FileManager\icons\Delete-32.png" />
+    <Content Include="PR\FileManager\icons\editcut-32.png" />
+    <Content Include="PR\FileManager\icons\File-copy-32.png" />
+    <Content Include="PR\FileManager\icons\Files-add-32.png" />
+    <Content Include="PR\FileManager\icons\folder-32.png" />
+    <Content Include="PR\FileManager\icons\folder-64.png" />
+    <Content Include="PR\FileManager\icons\Gnome-Dialog-Error-32.png" />
+    <Content Include="PR\FileManager\icons\Gnome-Edit-Paste-32.png" />
+    <Content Include="PR\FileManager\icons\gtk_close.png" />
+    <Content Include="PR\FileManager\icons\home-32_1.png" />
+    <Content Include="PR\FileManager\icons\img-add-32.png" />
+    <Content Include="PR\FileManager\icons\Library-32.png" />
+    <Content Include="PR\FileManager\icons\Paint-32.png" />
+    <Content Include="PR\FileManager\icons\Paint-64.png" />
+    <Content Include="PR\FileManager\icons\rar_32.png" />
+    <Content Include="PR\FileManager\icons\server-files.png" />
+    <Content Include="PR\FileManager\icons\Unknown-icon-64.png" />
+    <Content Include="PR\FileManager\icons\Unknown-icon.png" />
+    <Content Include="PR\FileManager\icons\Zip-file-32.png" />
+    <Content Include="PR\FileManager\js\AjaxToolKitManager.js" />
+    <Content Include="PR\FileManager\js\jquery-1.4.2.min.js" />
+    <Content Include="PR\FileManager\js\jquery-ui-1.8.4.custom.min.js" />
+    <Content Include="PR\FileManager\js\jquery.contextmenu.js" />
+    <Content Include="PR\FileManager\js\jquery.jstree.js" />
+    <Content Include="PR\FileManager\js\themes\apple\bg.jpg" />
+    <Content Include="PR\FileManager\js\themes\apple\d.png" />
+    <Content Include="PR\FileManager\js\themes\apple\dot_for_ie.gif" />
+    <Content Include="PR\FileManager\js\themes\apple\style.css" />
+    <Content Include="PR\FileManager\js\themes\apple\throbber.gif" />
+    <Content Include="PR\FileManager\js\themes\classic\d.png" />
+    <Content Include="PR\FileManager\js\themes\classic\dot_for_ie.gif" />
+    <Content Include="PR\FileManager\js\themes\classic\style.css" />
+    <Content Include="PR\FileManager\js\themes\classic\throbber.gif" />
+    <Content Include="PR\FileManager\js\themes\default-rtl\d.gif" />
+    <Content Include="PR\FileManager\js\themes\default-rtl\d.png" />
+    <Content Include="PR\FileManager\js\themes\default-rtl\dots.gif" />
+    <Content Include="PR\FileManager\js\themes\default-rtl\style.css" />
+    <Content Include="PR\FileManager\js\themes\default-rtl\throbber.gif" />
+    <Content Include="PR\FileManager\js\themes\default\d.gif" />
+    <Content Include="PR\FileManager\js\themes\default\d.png" />
+    <Content Include="PR\FileManager\js\themes\default\style.css" />
+    <Content Include="PR\FileManager\js\themes\default\throbber.gif" />
+    <Content Include="PR\FileManager\license.txt" />
+    <Content Include="PR\FileManager\player.aspx" />
+    <Content Include="PR\FileManager\Uploader.aspx" />
+    <Content Include="PR\jqueryFileTree.aspx" />
+    <Content Include="Scripts\AjaxToolKitManager.js" />
+    <Content Include="Scripts\jquery.contextmenu.js" />
+    <Content Include="Scripts\jquery.jstree.js" />
     <Content Include="PR\InsertNews.aspx" />
     <Content Include="PR\NewsPanel.aspx" />
-    <Content Include="PR\Sunset\Grid.Sunset.css" />
-    <Content Include="PR\Sunset\Grid\AddRecord.gif" />
-    <Content Include="PR\Sunset\Grid\Cancel.gif" />
-    <Content Include="PR\Sunset\Grid\Delete.gif" />
-    <Content Include="PR\Sunset\Grid\Edit.gif" />
-    <Content Include="PR\Sunset\Grid\Filter.gif" />
-    <Content Include="PR\Sunset\Grid\loading.gif" />
-    <Content Include="PR\Sunset\Grid\MoveDown.gif" />
-    <Content Include="PR\Sunset\Grid\MoveUp.gif" />
-    <Content Include="PR\Sunset\Grid\PagingFirst.gif" />
-    <Content Include="PR\Sunset\Grid\PagingLast.gif" />
-    <Content Include="PR\Sunset\Grid\PagingNext.gif" />
-    <Content Include="PR\Sunset\Grid\PagingPrev.gif" />
-    <Content Include="PR\Sunset\Grid\Refresh.gif" />
-    <Content Include="PR\Sunset\Grid\SingleMinus.gif" />
-    <Content Include="PR\Sunset\Grid\SinglePlus.gif" />
-    <Content Include="PR\Sunset\Grid\SortAsc.gif" />
-    <Content Include="PR\Sunset\Grid\SortDesc.gif" />
-    <Content Include="PR\Sunset\Grid\sprite.gif" />
-    <Content Include="PR\Sunset\Grid\sprite1.gif" />
-    <Content Include="PR\Sunset\Grid\Sunset.gif" />
-    <Content Include="PR\Sunset\Grid\Update.gif" />
+    <Content Include="PR\Photo Category.aspx" />
+    <Content Include="PR\Photo Gallery.aspx" />
     <Content Include="PR\ViewNews.aspx" />
-    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\jqueryFileTree.js" />
     <Content Include="Scripts\PersianDate.js" />
     <Content Include="Styles\calendar.css" />
+    <Content Include="Styles\jquery-ui-1.10.3.custom-renamed.css" />
+    <Content Include="Styles\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Styles\jqueryFileTree.css" />
     <Content Include="Styles\main.css" />
     <Content Include="Styles\news.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.4.1.js" />
-    <Content Include="Scripts\jquery-1.4.1.min.js" />
     <Content Include="Styles\theme.css" />
     <Content Include="tiny_mce\langs\en.js" />
     <Content Include="tiny_mce\license.txt" />
@@ -416,12 +512,13 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\RadGrid.Main.fa-IR1.designer.cs">
+    <Compile Include="HttpHelper.cs" />
+    <Compile Include="Members\App_GlobalResources\RadGrid.Main.fa-IR1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RadGrid.Main.fa-IR.resx</DependentUpon>
     </Compile>
-    <Compile Include="App_GlobalResources\RadGrid.Main1.designer.cs">
+    <Compile Include="Members\App_GlobalResources\RadGrid.Main1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RadGrid.Main.resx</DependentUpon>
@@ -429,6 +526,25 @@
     <Compile Include="database.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="PR\FileManager\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PR\FileManager\Funcations.aspx.cs">
+      <DependentUpon>Funcations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PR\FileManager\player.aspx.cs">
+      <DependentUpon>player.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PR\FileManager\Uploader.aspx.cs">
+      <DependentUpon>Uploader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PR\FileManager\Uploader.aspx.designer.cs">
+      <DependentUpon>Uploader.aspx</DependentUpon>
     </Compile>
     <Compile Include="PR\InsertNews.aspx.cs">
       <DependentUpon>InsertNews.aspx</DependentUpon>
@@ -446,6 +562,20 @@
       <DependentUpon>NewsPanel.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PR\Photo Category.aspx.cs">
+      <DependentUpon>Photo Category.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PR\Photo Category.aspx.designer.cs">
+      <DependentUpon>Photo Category.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PR\Photo Gallery.aspx.cs">
+      <DependentUpon>Photo Gallery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PR\Photo Gallery.aspx.designer.cs">
+      <DependentUpon>Photo Gallery.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PR\PR.master.cs">
       <DependentUpon>PR.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -469,6 +599,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="PR\FileManager\UserFiles\" />
+    <Folder Include="PR\files\NewFolder1\" />
     <Folder Include="tiny_mce\plugins\spellchecker\classes\utils\" />
     <Folder Include="tiny_mce\plugins\spellchecker\includes\" />
   </ItemGroup>
@@ -482,19 +614,23 @@
     <None Include="Fonts\BMitra.woff" />
     <None Include="Fonts\tahoma.ttf" />
     <None Include="Fonts\tahomabd.ttf" />
-    <Content Include="PR\Web.config" />
     <Content Include="PR\PR.master" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_GlobalResources\RadGrid.Main.fa-IR.resx">
-      <Generator>GlobalResourceProxyGenerator</Generator>
-      <LastGenOutput>RadGrid.Main.fa-IR1.designer.cs</LastGenOutput>
+    <Content Include="PR\FileManager\Web.config">
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_GlobalResources\RadGrid.Main.resx">
+    <Content Include="Members\App_GlobalResources\RadGrid.Main.fa-IR.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>RadGrid.Main.fa-IR1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Members\App_GlobalResources\RadGrid.Main.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>RadGrid.Main1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

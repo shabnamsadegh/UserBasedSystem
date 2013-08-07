@@ -11,6 +11,7 @@ namespace CustomWebControlUI
     {
         News nw;
         private static string connection_string = "Data Source=ROSTAM-PC;Initial Catalog=DataProvider;Integrated Security=True";
+        private static string connection_string_test = "Data Source=ROSTAM-PC;Initial Catalog=Test;Integrated Security=True";
 
         public static SqlConnection ConnectToDb()
         {
@@ -87,9 +88,8 @@ namespace CustomWebControlUI
 
         public static News LoadNewsForEdit(int news_id) 
         {
-            News nw;
             DataTable dt = LoadNews(news_id);
-            nw = new News(dt.Rows[0]["time"].ToString(), (DateTime)dt.Rows[0]["datetime"], dt.Rows[0]["TitleDesc"].ToString(), dt.Rows[0]["Titl1"].ToString(), dt.Rows[0]["Title2"].ToString(), dt.Rows[0]["Summery"].ToString(), dt.Rows[0]["Body"].ToString(), dt.Rows[0]["ImageUrl"].ToString(), dt.Rows[0]["Link"].ToString(), (bool)dt.Rows[0]["Publication"],dt.Rows[0]["symbols"].ToString());
+            News nw = new News(dt.Rows[0]["time"].ToString(), (DateTime)dt.Rows[0]["datetime"], dt.Rows[0]["TitleDesc"].ToString(), dt.Rows[0]["Titl1"].ToString(), dt.Rows[0]["Title2"].ToString(), dt.Rows[0]["Summery"].ToString(), dt.Rows[0]["Body"].ToString(), dt.Rows[0]["ImageUrl"].ToString(), dt.Rows[0]["Link"].ToString(), (bool)dt.Rows[0]["Publication"],dt.Rows[0]["symbols"].ToString());
             return nw;
         }
         public static DataTable loadSymbols()
@@ -116,6 +116,54 @@ namespace CustomWebControlUI
             cmd.Parameters.AddWithValue("@news_id", news_id);
             cnn.Open();
             cmd.ExecuteNonQuery();
+        }
+        public static DataTable LoadImageCategories() 
+        {
+            DataTable myDataTable = new DataTable();
+            SqlConnection cnn = new SqlConnection(connection_string_test);
+            SqlCommand cmd = new SqlCommand("LoadImageCategories", cnn);
+
+            SqlDataAdapter adapter = new SqlDataAdapter();
+
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cnn.Open();
+            adapter.SelectCommand = cmd;
+            adapter.Fill(myDataTable);
+            return myDataTable;
+        }
+        public static string CheckIfFileInUse(string file) {
+            string NewsInvolved = "";
+            bool flag = false;
+            SqlConnection cnn = new SqlConnection(connection_string);
+            SqlCommand cmd = new SqlCommand();
+            SqlDataReader dr;
+            cmd.CommandText = "LoadImageUrls";
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Connection = cnn;
+
+            try
+            {
+                cnn.Open();
+                dr = cmd.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    if (dr.GetString(0) == file)
+                    {
+                        NewsInvolved += dr.GetInt32(1).ToString() + NewsInvolved + ",";
+                        flag = true;
+                    }
+                }
+            }catch(Exception e)
+            {
+                
+            }
+            if (flag)
+                NewsInvolved = "نمی توانید تصویر مورد نظر را حذف کنید،این تصویر متعلق به خبر" + NewsInvolved + "است.برای حذف تصویر ابتدا خبر مربوطه را حذف کنید";
+            else
+                NewsInvolved = "";
+
+            return NewsInvolved;
         }
     }
 }

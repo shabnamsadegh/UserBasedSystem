@@ -12,6 +12,8 @@ namespace UserLoginSystem.PR
         protected void Page_Load(object sender, EventArgs e)
         {
             (Page.Master.Master.FindControl("titlecontent") as Label).Text = "پنل روابط عمومی";
+          
+
         }
     }
 }

@@ -5,20 +5,81 @@
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="TabLevel1PlaceHolder" runat="server">
-    <div class="tab1 selected" tabindex="1">اخبار</div>
-    <div class="tab1" tabindex="2">گالری</div>
-    <div class="tab1"tabindex="3">اطلاعات ناشران</div>
+<%--<div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+		<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-2" aria-selected="true"><a class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-2" href="#tabs-1">First</a></li>
+		<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-2" aria-selected="false"><a class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3" href="#tabs-2">Second</a></li>
+		<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="tabs-1" aria-labelledby="ui-id-2" aria-selected="false"><a  href="#tabs-3">Third</a></li>
+	</ul>
+	
+</div>
+--%>
+<div id="tabs">
+	<ul>
+		<li class="tab1" id="tab_news"><a href="#tab1">اخبار</a></li>
+		<li class="tab1" id="tab_gallery"><a href="#tab2" >گالری</a></li>
+		<li class="tab1" id="tab_publishers"><a href="#tab2">اطلاعات ناشران</a></li>
+        <!--< class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" aria-selected="true"-->
+	</ul>
+</div>
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="TabLevel2PlaceHolder" runat="server">
-    <div class="tab2" tabindex="1"><a href="#"><img width="24px" height="24px" src="../Images/news-icon.png"/>همه اخبار</a></div>
-    <div class="tab2" tabindex="1"><a href="InsertNews.aspx"><img width="24px" height="24px" src="../Images/news-add.png"/>خبر جدید</a></div>
+    <div class="tab2" id="allNews" relate="tab_news" ><a href="#"><img width="24px" height="24px" src="../Images/news-icon.png"/>همه اخبار</a></div>
+    <div class="tab2" id="newNews" relate="tab_news"><a href="#"><img width="24px" height="24px" src="../Images/news-add.png"/>خبر جدید</a></div>
+    <div class="tab2" id="photoCategory" relate="tab_gallery"><a href="#"><img width="24px" height="24px" src="../Images/category-icon.png"/>دسته بندی تصاویر</a></div>
    
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="MainPlaceHolder" runat="server">
     <asp:ContentPlaceHolder ID="MainPlaceHolder" runat="server">
+   
     </asp:ContentPlaceHolder>
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
+<script type="text/javascript">
+    $("#icons li").hover(
+			function () {
+			    $(this).addClass("ui-state-hover");
+			},
+			function () {
+			    $(this).removeClass("ui-state-hover");
+			});
+</script>
+<script type="text/javascript">
+    var selectedFromTab1 = GetParameterValues('tab1');
+    var selectedFromTab2 = GetParameterValues('tab2');
+    $("#" + selectedFromTab1).addClass("ui-state-default ui-corner-top ui-tabs-active ui-state-active");
+    $(".tab1:not(#" + selectedFromTab1+")").removeClass("ui-tabs-active ui-state-active");
+    var relation = $("#" + selectedFromTab2).attr("relate");
+  //alert(relation + "   " + selectedFromTab1);
+    $(".tab2[relate='" + selectedFromTab1 + "']").css("display", "inline-block");
+    $(".tab2:not([relate='" + selectedFromTab1 + "'])").css("display", "none");
+</script>
+
+<script type="text/javascript">
+    $("#tabs").tabs();
+//    $('#ctl00_ctl00_MainPlaceHolder_MainPlaceHolder_NewsGrid').click(
+//    function () {
+//        $(this).blur();
+//    });
+    $("#tab_news").click(function () {
+        window.location = "ViewNews.aspx?tab1=tab_news&tab2=allNews";
+    });
+    $("#allNews").click(function () {
+        window.location = "ViewNews.aspx?tab1=tab_news&tab2=allNews";
+    });
+    $("#newNews").click(function () {
+        window.location = "InsertNews.aspx?tab1=tab_news&tab2=newNews";
+     });
+
+     $("#tab_gallery").click(function () {
+         window.location = "Photo Category.aspx?tab1=tab_gallery&tab2=photoCategory";
+     });
+    $("#photoCategory").click(function () {
+        window.location = "Photo Category.aspx?tab1=tab_gallery&tab2=photoCategory";
+     });
+
+            </script>
  <asp:ContentPlaceHolder ID="ScriptPlaceHolder" runat="server">
+ 
     </asp:ContentPlaceHolder>
     </asp:Content>

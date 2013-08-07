@@ -22,16 +22,37 @@ a:hover {
 .headerpanel 
 {
     padding: 10px;
-    color: #fff;
-    background-color: #270508;
+    color: #270508;
+    background-color: white;
     height: 80px;
+    border-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+     border-top-left-radius: 5px;
+    -moz-border-radius-topright: 70px;
+    -webkit-border-top-right-radius: 70px;
+    border-top-right-radius: 70px;
+    -moz-border-radius-bottomright: 5px;
+    -webkit-border-bottom-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomleft: 80px;
+    -webkit-border-bottom-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+  
+    border-left: 1px solid #10cfff ;
+    border-right: 1px solid #10cfff ;
+    
 }
 .tabPanel {
-    background-color: #581014;
+    background-color: white;
     height: 58px;
+     border-radius: 5px;
+     
+  
 }
 .mianholder {
     background-color: #fef0f0;
+    
     /*height: 80%;/*78.93%;*/
 }
 #login {
@@ -43,6 +64,177 @@ a:hover {
 }
 .borderedcontent {
     width: initial;
-    border: 2px solid
-    
+    border: 2px solid;   
 }
+.tab2
+{
+ display:inline;   
+    }
+ 
+ #icons {
+		margin: 0;
+		padding: 0;
+	}
+	#icons li {
+		margin: 2px;
+		position: relative;
+		padding: 4px 0;
+		cursor: pointer;
+		float: left;
+		list-style: none;
+	}
+	#icons span.ui-icon {
+		float: left;
+		margin: 0 4px;
+	}
+ /********NEWS**********/  
+ .clsTime{
+    background-image:url('../Images/icon_clock_orange.png');
+    background-repeat:no-repeat;
+    padding-left:20px;
+    BackColor:Red;
+         
+    }
+ .fullWidth
+   {
+     width: 100%;
+   }
+   .submit
+    {
+     text-align:left;
+    }
+    body
+    {
+     background-color:White;
+        }
+    #main_div
+    {  
+    padding: 6px 2px 6px 2px;
+    width:50%;
+    margin-right: 25%;
+    border-radius: 5px;
+    position: relative;
+    padding:20px;
+    margin-top:2%;
+    -webkit-box-shadow: 1px -10px 30px rgba(83, 225, 75, 0.32);
+    -moz-box-shadow:    1px -10px 30px rgba(83, 225, 75, 0.32);
+    box-shadow:         1px -10px 30px rgba(83, 225, 75, 0.32);
+    }
+   #main_div #pin
+    {
+        position: absolute;
+        top: -17px;
+        left: -17px;
+        }
+        
+.main
+{
+        padding: 6px 2px 6px 2px;
+    border-radius: 5px;
+    position: relative;
+    padding:20px;
+    -webkit-box-shadow: 1px -10px 30px rgba(83, 225, 75, 0.32);
+    -moz-box-shadow:    1px -10px 30px rgba(83, 225, 75, 0.32);
+    box-shadow:         1px -10px 30px rgba(83, 225, 75, 0.32);
+    }
+    
+  
+ #main_div1
+    {  
+    padding: 6px 2px 6px 2px;
+    width:60%;
+    margin-right: 25%;
+    border-radius: 5px;
+    position: relative;
+    padding:20px;
+    margin-top:2%;
+    -webkit-box-shadow: 1px -10px 30px rgba(83, 225, 75, 0.32);
+    -moz-box-shadow:    1px -10px 30px rgba(83, 225, 75, 0.32);
+    box-shadow:         1px -10px 30px rgba(83, 225, 75, 0.32);
+    }
+   #main_div1 #pin
+    {
+        position: absolute;
+        top: -17px;
+        left: -17px;
+        }
+   #main_div2
+   {
+       width:93%;
+       margin-right:1.5%;
+       margin-top:20px;
+     
+   
+       }
+   #main_div2  #pin
+    {
+        position: absolute;
+        top: -32px;
+        left: -32px;
+        }
+        
+    #NewsGrid
+    {
+        border: 4px solid lime;
+       
+        }
+        
+        
+        
+        
+        
+        
+        
+ .err
+  {
+    background-color: #faff73;
+    text-align:right;
+    padding-right: 30px;
+      }
+ .inner_err
+       {
+    background-image: url('../Images/error.png');
+    background-repeat:no-repeat;
+    background-position:right;
+    padding-right: 30px;
+    }   
+    
+     .tabLevel2
+    {
+
+
+background: rgb(255, 255, 255);
+background: -moz-linear-gradient(90deg, rgb(255, 255, 255) 10%, rgb(220, 251, 253) 63%);
+background: -webkit-linear-gradient(90deg, rgb(255, 255, 255) 10%, rgb(220, 251, 253) 63%);
+background: -o-linear-gradient(90deg, rgb(255, 255, 255) 10%, rgb(220, 251, 253) 63%);
+background: -ms-linear-gradient(90deg, rgb(255, 255, 255) 10%, rgb(220, 251, 253) 63%);
+background: linear-gradient(180deg, rgb(255, 255, 255) 10%, rgb(220, 251, 253) 63%);
+border-bottom:2px solid #b4effa;
+border-top:2px solid #c8f9fc;
+
+
+ /*   background: rgb(211, 252, 255);
+    background: -moz-linear-gradient(90deg, rgb(211, 252, 255) 26%, rgb(203, 249, 220) 70%);
+    background: -webkit-linear-gradient(90deg, rgb(211, 252, 255) 26%, rgb(203, 249, 220) 70%);
+    background: -o-linear-gradient(90deg, rgb(211, 252, 255) 26%, rgb(203, 249, 220) 70%);
+    background: -ms-linear-gradient(90deg, rgb(211, 252, 255) 26%, rgb(203, 249, 220) 70%);
+    background: linear-gradient(180deg, rgb(211, 252, 255) 26%, rgb(203, 249, 220) 70%);
+
+    -moz-border-radius-topleft: 5px;
+    -webkit-border-top-left-radius: 5px;
+        border-top-left-radius: 5px;
+    -moz-border-radius-topright: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
+*/  
+
+} 
+  .selected
+  {
+      color:Red;
+
+      } 
+  #btndel:hover
+  {
+      cursor:pointer !important;
+      }

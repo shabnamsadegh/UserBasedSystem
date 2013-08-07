@@ -157,15 +157,6 @@ namespace CustomWebControlUI {
         protected global::System.Web.UI.WebControls.Label lblNewsImage;
         
         /// <summary>
-        /// ImageUploader control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload ImageUploader;
-        
-        /// <summary>
         /// lblNewsBody control.
         /// </summary>
         /// <remarks>
@@ -220,13 +211,22 @@ namespace CustomWebControlUI {
         protected global::System.Web.UI.WebControls.TextBox txtNewsResource;
         
         /// <summary>
-        /// btnSubmit1 control.
+        /// Button2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton btnSubmit1;
+        protected global::System.Web.UI.WebControls.Button Button2;
+        
+        /// <summary>
+        /// image_src control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputHidden image_src;
         
         /// <summary>
         /// symbols control.
@@ -235,7 +235,7 @@ namespace CustomWebControlUI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden symbols;
+        protected global::System.Web.UI.WebControls.HiddenField symbols;
         
         /// <summary>
         /// symbolNames control.
@@ -244,6 +244,6 @@ namespace CustomWebControlUI {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden symbolNames;
+        protected global::System.Web.UI.WebControls.HiddenField symbolNames;
     }
 }

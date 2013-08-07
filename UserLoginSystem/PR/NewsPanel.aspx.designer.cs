@@ -11,7 +11,7 @@ namespace UserLoginSystem
 {
 
 
-    public partial class NewsPanel
+    public partial class Default
     {
     }
 }

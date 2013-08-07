@@ -44,9 +44,10 @@
    you can use contrasting colors to make it apparent which cell is being hovered over) */
 .dpTDHover 
 {
-	background-color: #F3E18D;
-	border: 1px solid #B35412;
-	cursor: pointer;
+		border: 1px solid #448dae;
+	background: #79c9ec url(/Images/ui-bg_glass_75_79c9ec_1x400.png) 50% 50% repeat-x;
+	font-weight: normal;
+	color: #026890;
 }
 
 /* the table cell that holds the name of the month and the year */
