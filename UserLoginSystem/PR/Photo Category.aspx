@@ -39,8 +39,10 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
 <script type="text/javascript">
     function runWhenDocIsReady() {
-        
-        
+
+        $("#items").removeClass("ui-selectee ui-selected");
+        $('#items').live('selectstart dragstart', function (evt) { evt.preventDefault(); return false; });
+      
 
        }
 

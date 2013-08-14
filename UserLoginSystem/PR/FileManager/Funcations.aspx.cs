@@ -110,24 +110,29 @@ public partial class FileManager_Funcations : System.Web.UI.Page
        string HTML = "<ol id=selectable>";
 
        int counter = 0;
+     
        foreach (string File in Files)
        {
            counter++;
            FileInfo f = new FileInfo(File);
            int FileType;
+          /* HTML += "<tr><td style='float:right;text-align:right;'>";*/
            string iconestring = GetIcone(System.IO.Path.GetExtension(File), out FileType);
+           HTML += "<div style='float:right;'>";
            HTML += " <input class='btn' style='float:right;' onclick=OpenFile('" + FileType.ToString() + "','" + (DirPath + "/" + System.IO.Path.GetFileName(File)).Replace(" ", "%20").Replace("//", "/") + "') id='Button1' type='button' value='مشاهده تصویر' /> ";
           // HTML += " <input class='btn' runat='Server' style='float:right;' onclick=InsertFile('" + (DirPath + "/" + System.IO.Path.GetFileName(File)).Replace(" ", "%20").Replace("//", "/") + "') id='Button2' type='button' value='انتخاب عکس برای خبر' /> ";
            //HTML += " <input class='btn' runat='server' style='float:right;' onclick='' id='Button2"+counter.ToString()+"' type='button' value='انتخاب عکس برای خبر' /> ";
+         /*  HTML += "</td><td>";*/
+           HTML += "</div>";
            HTML += "<li path='" + (DirPath + "/" + System.IO.Path.GetFileName(File)).Replace(" ", "%20") + "' ondblclick=OpenFile('" + FileType.ToString() + "','" + (DirPath + "/" + System.IO.Path.GetFileName(File)).Replace(" ", "%20").Replace("//", "/") + "') class=ui-widget-content>";
            HTML += "<img style='float:left;' width='25px;' src='" + iconestring + "'/>";
            HTML += "<span float:left;padding-right:20px;>" + System.IO.Path.GetFileName(File) + "</span>";
            HTML += "<br><span float:left;padding-right:20px;>" + f.CreationTime + "</span>";
            HTML += "<div style='float:right;padding-right:20px;padding-top:0px;'>"+f.Length / 1024+" KB</div>";
            HTML += "</li>";
-          
+          /* HTML += "</td></tr>";*/
        }
-
+    /*  HTML += "</table>";*/
        foreach (string Dir in Directorys)
        {
          
