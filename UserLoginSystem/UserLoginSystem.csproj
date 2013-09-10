@@ -69,8 +69,11 @@
     </Content>
     <Content Include="Images\Actions-insert-image-icon.png" />
     <Content Include="Images\Add.png" />
+    <Content Include="Images\all-brokers.png" />
     <Content Include="Images\animated-overlay.gif" />
+    <Content Include="Images\branches.png" />
     <Content Include="Images\category-icon.png" />
+    <Content Include="Images\cities.png" />
     <Content Include="Images\Date Picker\active-bg.gif" />
     <Content Include="Images\Date Picker\dark-bg.gif" />
     <Content Include="Images\Date Picker\hover-bg.gif" />
@@ -88,7 +91,12 @@
     <Content Include="Images\folder_open.png" />
     <Content Include="Images\icon_clock_orange.png" />
     <Content Include="Images\Images-icon.png" />
+    <Content Include="Images\list.png" />
+    <Content Include="Images\list_add.png" />
     <Content Include="Images\logo.PNG" />
+    <Content Include="Images\new branch.png" />
+    <Content Include="Images\new broker.png" />
+    <Content Include="Images\new city.png" />
     <Content Include="Images\news-add.png" />
     <Content Include="Images\news-icon.png" />
     <Content Include="Images\no-image.jpg" />
@@ -114,6 +122,14 @@
     <Content Include="Images\ui-icons_f5e175_256x240.png" />
     <Content Include="Images\ui-icons_f7a50d_256x240.png" />
     <Content Include="Images\ui-icons_fcd113_256x240.png" />
+    <Content Include="Listing\AllInfo.aspx" />
+    <Content Include="Listing\InsertInfo.aspx" />
+    <Content Include="Members\AllBranches.aspx" />
+    <Content Include="Members\AllBrokers.aspx" />
+    <Content Include="Members\AllCities.aspx" />
+    <Content Include="Members\InsertBranches.aspx" />
+    <Content Include="Members\InsertBroker.aspx" />
+    <Content Include="Members\InsertCity.aspx" />
     <Content Include="PR\FileManager\css\cmenu-gloss-cyan-menu-item-hover.gif" />
     <Content Include="PR\FileManager\css\cmenu-gloss-menu-item-hover.gif" />
     <Content Include="PR\FileManager\css\cmenu-gloss-semitransparent-menu-item-hover.png" />
@@ -513,6 +529,48 @@
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="HttpHelper.cs" />
+    <Compile Include="Listing\AllInfo.aspx.cs">
+      <DependentUpon>AllInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Listing\AllInfo.aspx.designer.cs">
+      <DependentUpon>AllInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Listing\InsertInfo.aspx.cs">
+      <DependentUpon>InsertInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Listing\InsertInfo.aspx.designer.cs">
+      <DependentUpon>InsertInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Listing\Listing.master.cs">
+      <DependentUpon>Listing.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Listing\Listing.master.designer.cs">
+      <DependentUpon>Listing.master</DependentUpon>
+    </Compile>
+    <Compile Include="Members\AllBranches.aspx.cs">
+      <DependentUpon>AllBranches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\AllBranches.aspx.designer.cs">
+      <DependentUpon>AllBranches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\AllBrokers.aspx.cs">
+      <DependentUpon>AllBrokers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\AllBrokers.aspx.designer.cs">
+      <DependentUpon>AllBrokers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\AllCities.aspx.cs">
+      <DependentUpon>AllCities.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\AllCities.aspx.designer.cs">
+      <DependentUpon>AllCities.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Members\App_GlobalResources\RadGrid.Main.fa-IR1.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -526,6 +584,35 @@
     <Compile Include="database.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Members\City.cs" />
+    <Compile Include="Members\InsertBranches.aspx.cs">
+      <DependentUpon>InsertBranches.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\InsertBranches.aspx.designer.cs">
+      <DependentUpon>InsertBranches.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\InsertBroker.aspx.cs">
+      <DependentUpon>InsertBroker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\InsertBroker.aspx.designer.cs">
+      <DependentUpon>InsertBroker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\InsertCity.aspx.cs">
+      <DependentUpon>InsertCity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\InsertCity.aspx.designer.cs">
+      <DependentUpon>InsertCity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Members\Members.master.cs">
+      <DependentUpon>Members.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Members\Members.master.designer.cs">
+      <DependentUpon>Members.master</DependentUpon>
     </Compile>
     <Compile Include="PR\FileManager\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -618,6 +705,8 @@
     <Content Include="PR\FileManager\Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Members\Members.master" />
+    <Content Include="Listing\Listing.master" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Members\App_GlobalResources\RadGrid.Main.fa-IR.resx">

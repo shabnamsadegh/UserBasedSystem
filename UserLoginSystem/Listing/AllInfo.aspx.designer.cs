@@ -7,10 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserLoginSystem.Members {
+namespace UserLoginSystem.Listing {
     
     
-    public partial class ViewNews {
+    public partial class AllInfo {
         
         /// <summary>
         /// RadScriptManager1 control.
@@ -31,12 +31,12 @@ namespace UserLoginSystem.Members {
         protected global::Telerik.Web.UI.RadAjaxManager RadAjaxManager1;
         
         /// <summary>
-        /// NewsGrid control.
+        /// listGrid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadGrid NewsGrid;
+        protected global::Telerik.Web.UI.RadGrid listGrid;
     }
 }

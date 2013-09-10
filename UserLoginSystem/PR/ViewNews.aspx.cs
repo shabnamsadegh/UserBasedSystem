@@ -10,7 +10,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
 
-namespace UserLoginSystem.PR
+namespace UserLoginSystem.Members
 {
     public partial class ViewNews : System.Web.UI.Page
     {

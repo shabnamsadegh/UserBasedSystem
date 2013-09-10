@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Listing.master.cs" Inherits="UserLoginSystem.Listing.Listing" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+  <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="TabLevel1PlaceHolder" runat="server">
+<div id="tabs">
+	<ul>
+		<li class="tab1" id="tab_list"><a href="#tab1">پذیرش</a></li>
+
+	</ul>
+</div>
+
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="TabLevel2PlaceHolder" runat="server">
+<div class="tab2" id="allInfo" relate="tab_list" ><a href="#"><img width="24px" height="24px" src="/Images/list.png"/>همه اطلاعات</a></div>
+    <div class="tab2" id="newInfo" relate="tab_list"><a href="#"><img width="24px" height="24px" src="/Images/list_add.png"/>تعریف اطلاعات جدید</a></div>
+   
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="MainPlaceHolder" runat="server">
+  <asp:ContentPlaceHolder ID="MainPlaceHolder" runat="server">
+   
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
+<script type="text/javascript">
+    $("#icons li").hover(
+			function () {
+			    $(this).addClass("ui-state-hover");
+			},
+			function () {
+			    $(this).removeClass("ui-state-hover");
+			});
+</script>
+<script type="text/javascript">
+    var selectedFromTab1 = GetParameterValues('tab1');
+
+    var selectedFromTab2 = GetParameterValues('tab2');
+    $("#" + selectedFromTab1).addClass("ui-state-default ui-corner-top ui-tabs-active ui-state-active");
+    $(".tab1:not(#" + selectedFromTab1 + ")").removeClass("ui-tabs-active ui-state-active");
+    var relation = $("#" + selectedFromTab2).attr("relate");
+    //alert(relation + "   " + selectedFromTab1);
+    $(".tab2[relate='" + selectedFromTab1 + "']").css("display", "inline-block");
+    $(".tab2:not([relate='" + selectedFromTab1 + "'])").css("display", "none");
+</script>
+
+<script type="text/javascript">
+    $("#tabs").tabs();
+
+    $("#tab_list").click(function () {
+        window.location = "InsertInfo.aspx?tab1=tab_list&tab2=allInfo";
+    });
+    $("#allInfo").click(function () {
+        window.location = "AllInfo.aspx?tab1=tab_list&tab2=newInfo";
+    });
+    $("#newInfo").click(function () {
+        window.location = "InsertInfo.aspx?tab1=tab_list&tab2=allInfo";
+    });
+
+            </script>
+ <asp:ContentPlaceHolder ID="ScriptPlaceHolder" runat="server">
+ 
+    </asp:ContentPlaceHolder>
+</asp:Content>

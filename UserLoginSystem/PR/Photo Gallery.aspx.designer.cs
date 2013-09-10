@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserLoginSystem.PR
+namespace UserLoginSystem.Members
 {
 
 

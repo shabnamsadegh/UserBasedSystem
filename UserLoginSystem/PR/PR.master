@@ -36,6 +36,9 @@
 </asp:Content>
 <asp:Content ID="Content5" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
 <script type="text/javascript">
+    function runWhenDocIsReady() {
+    
+    }
     $("#icons li").hover(
 			function () {
 			    $(this).addClass("ui-state-hover");

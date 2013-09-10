@@ -1,0 +1,90 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Members.master.cs" Inherits="UserLoginSystem.Members.Members" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+  <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="TabLevel1PlaceHolder" runat="server">
+<div id="tabs">
+	<ul>
+		<li class="tab1" id="tab_broker"><a href="#tab1">کارگزاران</a></li>
+        <li class="tab1" id="tab_branches"><a href="#tab1">شعبه</a></li>
+		<li class="tab1" id="tab_city"><a href="#tab2" >شهر</a></li>
+	</ul>
+</div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="TabLevel2PlaceHolder" runat="server">
+ <div class="tab2" id="allBrokers" relate="tab_broker" ><a href="#"><img width="24px" height="24px" src="/Images/all-brokers.png"/>همه کارگزاران</a></div>
+    <div class="tab2" id="newBroker" relate="tab_broker"><a href="#"><img width="24px" height="24px" src="/Images/new broker.png"/>کارگزار جدید</a></div>
+    <div class="tab2" id="allBranches" relate="tab_branches"><a href="#"><img width="24px" height="24px" src="/Images/branches.png"/>همه شعبه ها</a></div>
+    <div class="tab2" id="newBranch" relate="tab_branches"><a href="#"><img width="24px" height="24px" src="/Images/new branch.png"/>شعبه جدید</a></div>
+    <div class="tab2" id="allCities" relate="tab_city"><a href="#"><img width="24px" height="24px" src="/Images/cities.png"/>شهر ها</a></div>
+    <div class="tab2" id="newCity" relate="tab_city"><a href="#"><img width="24px" height="24px" src="/Images/new city.png"/>شهر جدید</a></div>
+   
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="MainPlaceHolder" runat="server">
+  <asp:ContentPlaceHolder ID="MainPlaceHolder" runat="server">
+   
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content5" ContentPlaceHolderID="ScriptPlaceHolder" runat="server">
+<script type="text/javascript">
+    $("#icons li").hover(
+			function () {
+			    $(this).addClass("ui-state-hover");
+			},
+			function () {
+			    $(this).removeClass("ui-state-hover");
+			});
+</script>
+<script type="text/javascript">
+    var selectedFromTab1 = GetParameterValues('tab1');
+   
+    var selectedFromTab2 = GetParameterValues('tab2');
+    $("#" + selectedFromTab1).addClass("ui-state-default ui-corner-top ui-tabs-active ui-state-active");
+    $(".tab1:not(#" + selectedFromTab1 + ")").removeClass("ui-tabs-active ui-state-active");
+    var relation = $("#" + selectedFromTab2).attr("relate");
+    //alert(relation + "   " + selectedFromTab1);
+    $(".tab2[relate='" + selectedFromTab1 + "']").css("display", "inline-block");
+    $(".tab2:not([relate='" + selectedFromTab1 + "'])").css("display", "none");
+</script>
+
+<script type="text/javascript">
+    $("#tabs").tabs();
+
+    $("#tab_broker").click(function () {
+        window.location = "InsertBroker.aspx?tab1=tab_broker&tab2=allBrokers";
+    });
+     $("#allBrokers").click(function () {
+         window.location = "AllBrokers.aspx?tab1=tab_broker&tab2=newBroker";
+        });
+    $("#newBroker").click(function () {
+        window.location = "InsertBroker.aspx?tab1=tab_broker&tab2=allBrokers";
+    });
+
+    $("#tab_branches").click(function () {
+        window.location = "AllBranches.aspx?tab1=tab_branches&tab2=allBranches";
+    });
+
+    $("#allBranches").click(function () {
+        window.location = "AllBranches.aspx?tab1=tab_branches&tab2=allBranches";
+    });
+
+    $("#newBranch").click(function () {
+        window.location = "InsertBranches.aspx?tab1=tab_branches&tab2=newBranch";
+    });
+    $("#tab_city").click(function () {
+        window.location = "AllCities.aspx?tab1=tab_city&tab2=allCities";
+    });
+    $("#allCities").click(function () {
+        window.location = "AllCities.aspx?tab1=tab_city&tab2=allCities";
+    });
+    $("#newCity").click(function () {
+        window.location = "InsertCity.aspx?tab1=tab_city&tab2=newCity";
+    });
+    
+            </script>
+            <asp:ContentPlaceHolder ID="ScriptPlaceHolder" runat="server">
+ 
+    </asp:ContentPlaceHolder>
+</asp:Content>

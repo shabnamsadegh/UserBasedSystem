@@ -7,36 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UserLoginSystem.Members {
+namespace UserLoginSystem.Listing {
     
     
-    public partial class ViewNews {
+    public partial class Listing {
         
         /// <summary>
-        /// RadScriptManager1 control.
+        /// HeadContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadScriptManager RadScriptManager1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
         
         /// <summary>
-        /// RadAjaxManager1 control.
+        /// MainPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadAjaxManager RadAjaxManager1;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainPlaceHolder;
         
         /// <summary>
-        /// NewsGrid control.
+        /// ScriptPlaceHolder control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Telerik.Web.UI.RadGrid NewsGrid;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder ScriptPlaceHolder;
     }
 }

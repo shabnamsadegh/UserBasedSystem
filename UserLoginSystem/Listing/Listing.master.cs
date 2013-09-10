@@ -5,9 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace UserLoginSystem.Members
+namespace UserLoginSystem.Listing
 {
-    public partial class Photo_Gallery : System.Web.UI.Page
+    public partial class Listing : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
